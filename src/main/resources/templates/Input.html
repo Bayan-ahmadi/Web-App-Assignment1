@@ -12,16 +12,17 @@
 
 <form action="Output.html" th:action="@{Output}">
     <h2> Choose your weapon....</h2>
-    <p>
-        <label><input type="radio" th:name="choice" th:value="0">✊</label>
-        <label><input type="radio" th:name="choice" th:value="1" checked>✋</label>
-        <label><input type="radio" th:name="choice" th:value="2">✌️</label>
+    <p1 th:class="selections">
+        <label><input type="radio" th:class="buttons" th:name="choice" th:value="0">✊</label>
+        <label><input type="radio" th:class="buttons" th:name="choice" th:value="1" checked>✋</label>
+        <label><input type="radio" th:class="buttons" th:name="choice" th:value="2">✌️</label>
 
-    </p>
-    <p>
-        <button type="submit">Play</button>
-    </p>
+    </p1>
+    <div th:class="play">
 
+        <button th:class="plays" type="submit">Play</button>
+
+    </div>
 </form>
 </body>
 </html>
