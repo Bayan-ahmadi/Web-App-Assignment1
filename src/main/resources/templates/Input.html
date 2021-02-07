@@ -14,11 +14,14 @@
     <h2> Choose your weapon....</h2>
     <p>
         <label><input type="radio" th:name="choice" th:value="0">✊</label>
-        <label><input type="radio" th:name="choice" th:value="1">✋</label>
+        <label><input type="radio" th:name="choice" th:value="1" checked>✋</label>
         <label><input type="radio" th:name="choice" th:value="2">✌️</label>
 
     </p>
-    <button type="submit">Play</button>
+    <p>
+        <button type="submit">Play</button>
+    </p>
+
 </form>
 </body>
 </html>

@@ -2,36 +2,39 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Output</title>
     <link rel="stylesheet" href="../static/css/main.css"/>
+    <title>Output</title>
+
 </head>
 <h1> Results</h1>
 
-<p th:text="choice">
-    You choose
-</p>
 
-<th:block th:switch="${result.winner()}">
 
-    <p th:case="0">Rock</p>
-    <p th:case="1">Paper</p>
-    <p th:case="2">Scissor</p>
+<body>
+
+
+<th:block th:switch="${result.comChoice}">
+
+    <p th:case="0">Computer chose: ✊</p>
+    <p th:case="1">Computer chose: ✋</p>
+    <p th:case="*">Computer chose: ✌</p>
+
 </th:block>
 
-<p th:text="${result.winner()}">
+<th:block th:switch="${result.choice}">
+
+    <p th:case="0">You chose: ✊</p>
+    <p th:case="1">You chose: ✋</p>
+    <p th:case="*">You chose: ✌</p>
+</th:block>
+
+<p th:text="${result.getWinner()}">
     The winner is
 </p>
 
 <p>
     <a href="Input.html" th:href="@{Input}">Play Again</a>
 </p>
-
-<p>
-
-</p>
-
-<body>
-
 
 </body>
 </html>

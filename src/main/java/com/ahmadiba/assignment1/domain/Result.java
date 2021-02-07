@@ -5,10 +5,23 @@ import java.io.Serializable;
 public class Result implements Serializable {
 
     public int choice =1;
+    public int comChoice =0;
+
 
     public Result(){
 
     }
+
+    public int getComChoice() {
+        int comChoice = (int)(Math.random() * 3);
+        return comChoice;
+
+    }
+    public void setComChoice(int comChoice) {
+        this.comChoice = comChoice;
+    }
+
+
 
     public int getChoice() {
         return choice;
@@ -20,40 +33,31 @@ public class Result implements Serializable {
 
 
 
-    public void winner(){
+    public String getWinner(){
 
-        int comChoice = (int)(Math.random()* 3);
-
-        String game = "";
-
+        String winner= "";
 
 
         if(comChoice == choice){
 
-            game = "You tied";
+            winner = "You tied";
         }
 
         else if (( choice == 0 && comChoice == 2) || ( choice == 2 && comChoice == 1) || ( choice == 1 && comChoice ==0)){
 
-            game = "You Win!";
+           winner = "You Win!";
+
         }
 
-        else game = "You Lose";
+        else winner = "You Lose";
+
+        return winner;
+
+
 
 
 
     }
-
-
-
-
-
-
-
-
-
-
-
 
 
     }
