@@ -4,8 +4,8 @@ import java.io.Serializable;
 
 public class Result implements Serializable {
 
-    public int choice =1;
-    public int comChoice =0;
+    public int choice;
+    public int comChoice ;
 
 
     public Result(){
@@ -13,7 +13,14 @@ public class Result implements Serializable {
     }
 
     public int getComChoice() {
-        int comChoice = (int)(Math.random() * 3);
+
+        comChoice = (int)(Math.random() * 3);
+        System.out.println( "rock = 0 \n");
+        System.out.println( "paper = 1 \n");
+        System.out.println( "sizzors = 2 \n");
+
+        System.out.println( "Computer choose" + comChoice);
+
         return comChoice;
 
     }
@@ -35,28 +42,20 @@ public class Result implements Serializable {
 
     public String getWinner(){
 
-        String winner= "";
+        if(comChoice == choice)
+            return  "You tied";
 
 
-        if(comChoice == choice){
+        // rock = 0
+        // paper = 1
+        // sizzors = 2
 
-            winner = "You tied";
+        if (( choice == 0 && comChoice == 2) || ( choice == 2 && comChoice == 1) || ( choice == 1 && comChoice ==0)){
+           return  "You Win!";
+
         }
 
-        else if (( choice == 0 && comChoice == 2) || ( choice == 2 && comChoice == 1) || ( choice == 1 && comChoice ==0)){
-
-           winner = "You Win!";
-
-        }
-
-        else winner = "You Lose";
-
-        return winner;
-
-
-
-
-
+        return  "You lose!" ;
     }
 
 
