@@ -33,7 +33,7 @@ public class Result implements Serializable {
             game = "You tied";
         }
 
-        else if (( choice == 1 && comChoice == 3) || ( choice == 3 && comChoice == 2) || ( choice == 2 && comChoice ==1)){
+        else if (( choice == 0 && comChoice == 2) || ( choice == 2 && comChoice == 1) || ( choice == 1 && comChoice ==0)){
 
             game = "You Win!";
         }

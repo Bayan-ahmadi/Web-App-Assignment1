@@ -7,15 +7,18 @@
 </head>
 <h1> Results</h1>
 
-<p>
+<p th:text="choice">
     You choose
 </p>
 
-<p>
-    The computer choose
-</p>
+<th:block th:switch="${result.winner()}">
 
-<p>
+    <p th:case="0">Rock</p>
+    <p th:case="1">Paper</p>
+    <p th:case="2">Scissor</p>
+</th:block>
+
+<p th:text="${result.winner()}">
     The winner is
 </p>
 
